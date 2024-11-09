@@ -41,6 +41,4 @@ Once the project is fully implemented and is fully functional, the following ext
 
 ## Project Wireframe
 
-TODO: Replace the wireframe below with you own design.
-
 ![wireframe](legbook-image.PNG)
