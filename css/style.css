@@ -1,4 +1,129 @@
-h1{
-  border-color: #d3e644;
-  border-style: dashed;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Layout */
+main {
+  display: flex;
+  margin-top: 70px; 
+  max-width: 1200px;
+  margin: 70px auto 20px auto;
+  gap: 20px;
+}
+
+/* Sidebar shit */
+aside {
+  background-color: white;
+  width: 25%;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #1877f2;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Posts Section */
+section.posts {
+  width: 75%;
+}
+
+article.post {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article.post h2 {
+  font-size: 18px;
+  color: #1877f2;
+}
+
+article.post p {
+  margin: 10px 0;
+}
+
+article.post button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+article.post button:hover {
+  background-color: #145dbf;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #fff;
+  color: #555;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
 }
