@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Hello World!</title>
+  <title>Legbook - Connect with friends and the world around you.</title>
   <meta name="description" content="Legbook - Connect with friends and the world around you.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
@@ -23,8 +23,8 @@
       </ul>
     </nav>
   </header>
-  <main>
-
+  
+  <main class="content-wrapper">
     <!-- Friends Sidebar -->
     <aside>
       <h2>Friends</h2>
@@ -35,15 +35,45 @@
       </ul>
     </aside>
 
+    <!-- Create Post Section (Moved to the Top) -->
+    <section class="create-post">
+      <h2>Create a Post</h2>
+      <form id="postForm">
+        <textarea name="postContent" id="postContent" rows="3" placeholder="What's on your mind?" required></textarea>
+        
+        <div class="form-actions">
+          <label>
+            Add Image:
+            <input type="file" id="imageInput" accept="image/*">
+          </label>
+          <label>
+            Add Video:
+            <input type="file" id="videoInput" accept="video/*">
+          </label>
+          <button type="submit">Post</button>
+        </div>
+      </form>
+    </section>
+
     <!-- Posts Section -->
-    <section class="posts">
+    <section class="posts" id="posts">
       <article class="post">
-        <h2>Post Title</h2>
-        <p>This is a sample post. Add more posts here!</p>
-        <button>Like</button>
-        <button>Comment</button>
+        <h2>Sample Post Title</h2>
+        <p>This is a sample post. Add more posts!</p>
+        <!-- Image or video example -->
+        <img src="img/myleg.jpeg" alt="myleg.jpeg">
+
+        <!-- Comment Section -->
+        <div class="comments">
+          <textarea class="add-comment" placeholder="Write a comment..."></textarea>
+          <button class="submit-comment">Comment</button>
+          <ul class="comment-list">
+            <!-- Comments will appear here -->
+          </ul>
+        </div>
       </article>
     </section>
+
   </main>
 
   <!-- Footer Section -->

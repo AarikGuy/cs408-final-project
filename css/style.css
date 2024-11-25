@@ -16,6 +16,8 @@ body {
   background-color: #f0f2f5;
   color: #333;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 /* Header Styles */
@@ -62,15 +64,15 @@ header nav ul li a:hover {
 main {
   flex: 1; 
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
+  flex-direction: column; /* Adjusted to column for stacking elements */
   margin-top: 70px;
   max-width: 1200px;
   margin: 70px auto 20px auto;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Sidebar shit */
+/* Sidebar (Friends List) */
 aside {
   position: fixed; 
   right: 0; 
@@ -107,18 +109,71 @@ aside ul li a:hover {
 }
 
 
+/* Create Post Section */
+.create-post {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px; 
+}
+
+.create-post h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.create-post textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.create-post .form-actions label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.create-post .form-actions input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.create-post button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-post button:hover {
+  background-color: #2766b8;
+}
+
 /* Posts Section */
 section.posts {
-  width: 100%; 
-  max-width: 800px; 
-  margin: 0 auto; 
-  padding: 15px;
+  width: 100%;
 }
+
+.posts img {
+  max-width: 100%;        
+  height: auto;           
+  object-fit: contain;    
+  margin-top: 10px;       
+}
+
 
 article.post {
   background-color: white;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -145,6 +200,42 @@ article.post button:hover {
   background-color: #2766b8;
 }
 
+/* Comment Section */
+.comments {
+  margin-top: 20px;
+}
+
+.comments textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.comments button {
+  background-color: #1877f2;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comments button:hover {
+  background-color: #2766b8;
+}
+
+.comment-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.comment-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 /* Footer Styles */
 footer {
   text-align: center;
@@ -152,98 +243,4 @@ footer {
   background-color: #fff;
   color: #555;
   border-top: 1px solid #ccc;
-}
-
-/* Profile Page Styles */
-.profile {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.profile-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.profile-header .profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.profile-header h1 {
-  font-size: 24px;
-  color: #333;
-}
-
-.profile-header p {
-  font-size: 16px;
-  color: #555;
-  margin: 10px 0;
-}
-
-.profile-header button {
-  background-color: #1877f2;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.profile-header button:hover {
-  background-color: #2b69b9;
-}
-
-/* Active Nav Link */
-header nav ul li a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Posts Section in Profile */
-section.posts h2 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-section.posts .post {
-  background-color: white;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-section.posts .post h3 {
-  font-size: 18px;
-  color: #1877f2;
-  margin-bottom: 10px;
-}
-
-section.posts .post p {
-  font-size: 14px;
-  color: #555;
-  margin: 10px 0;
-}
-
-section.posts .post button {
-  background-color: #145dbf;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-section.posts .post button:hover {
-  background-color: #100f49;
 }
