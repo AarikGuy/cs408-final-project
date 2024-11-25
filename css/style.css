@@ -5,7 +5,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%; 
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background-color: #f0f2f5;
   color: #333;
@@ -54,9 +60,11 @@ header nav ul li a:hover {
 
 /* Main Content Layout */
 main {
+  flex: 1; 
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 70px; 
+  justify-content: center;
+  margin-top: 70px;
   max-width: 1200px;
   margin: 70px auto 20px auto;
   gap: 20px;
@@ -64,11 +72,17 @@ main {
 
 /* Sidebar shit */
 aside {
+  position: fixed; 
+  right: 0; 
+  top: 70px; 
+  width: 25%; 
+  max-width: 300px; 
+  height: calc(100vh - 70px); 
   background-color: white;
-  width: 25%;
   padding: 15px;
-  border-radius: 8px;
+  border-left: 1px solid #ccc; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; 
 }
 
 aside h2 {
@@ -78,26 +92,33 @@ aside h2 {
 
 aside ul {
   list-style: none;
+  padding: 0;
 }
 
 aside ul li a {
   text-decoration: none;
   color: #1877f2;
+  display: block;
+  margin-bottom: 5px;
 }
 
 aside ul li a:hover {
   text-decoration: underline;
 }
 
+
 /* Posts Section */
 section.posts {
-  width: 75%;
+  width: 100%; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 15px;
 }
 
 article.post {
   background-color: white;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -121,7 +142,7 @@ article.post button {
 }
 
 article.post button:hover {
-  background-color: #145dbf;
+  background-color: #2766b8;
 }
 
 /* Footer Styles */
@@ -131,7 +152,6 @@ footer {
   background-color: #fff;
   color: #555;
   border-top: 1px solid #ccc;
-  margin-top: 20px;
 }
 
 /* Profile Page Styles */
@@ -179,7 +199,7 @@ footer {
 }
 
 .profile-header button:hover {
-  background-color: #145dbf;
+  background-color: #2b69b9;
 }
 
 /* Active Nav Link */
@@ -225,5 +245,5 @@ section.posts .post button {
 }
 
 section.posts .post button:hover {
-  background-color: #c0392b;
+  background-color: #100f49;
 }
