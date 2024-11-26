@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Legbook - Messages</title>
+  <meta name="description" content="Legbook - Messages">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Legbook</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- Messages Section -->
+    <section class="messages-section">
+      <h2>Messages</h2>
+      <!-- Friends Sidebar -->
+      <aside>
+        <h3>Friends</h3>
+        <ul>
+          <li><a href="#" class="friend" data-friend="John Doe">John Doe</a></li>
+          <li><a href="#" class="friend" data-friend="Jane Smith">Jane Smith</a></li>
+          <li><a href="#" class="friend" data-friend="Sam Wilson">Sam Wilson</a></li>
+        </ul>
+      </aside>
+
+      <!-- Chat Box -->
+      <div id="chatBox" class="chat-box">
+        <p>Choose a friend to start chatting!</p>
+      </div>
+
+      <!-- Message Input Section -->
+      <div class="message-input">
+        <textarea id="messageInput" placeholder="Type a message..." rows="3"></textarea>
+        <button id="sendMessage">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Legbook. All rights reserved.</p>
+  </footer>
+
+  <script src="js/messages.js"></script>
+</body>
+
+</html>

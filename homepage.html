@@ -18,7 +18,7 @@
       <ul>
         <li><a href="homepage.html">Home</a></li>
         <li><a href="profile.html">Profile</a></li>
-        <li><a href="#">Messages</a></li>
+        <li><a href="messages.html">Messages</a></li>
         <li><a href="settings.html">Settings</a></li>
       </ul>
     </nav>
@@ -29,31 +29,40 @@
     <aside>
       <h2>Friends</h2>
       <ul>
-        <li><a href="#">John Doe</a></li>
-        <li><a href="#">Jane Smith</a></li>
-        <li><a href="#">Sam Wilson</a></li>
+        <li><a href="img/rick.gif">John Doe</a></li>
+        <li><a href="https://www.youtube.com/watch?v=lsdWGxpBS90">Jane Smith</a></li>
+        <li><a href="https://youtu.be/6MKJ50FLQg8?t=12">Sam Wilson</a></li>
       </ul>
     </aside>
 
-    <!-- Create Post Section (Moved to the Top) -->
-    <section class="create-post">
-      <h2>Create a Post</h2>
-      <form id="postForm">
-        <textarea name="postContent" id="postContent" rows="3" placeholder="What's on your mind?" required></textarea>
-        
-        <div class="form-actions">
-          <label>
-            Add Image:
-            <input type="file" id="imageInput" accept="image/*">
-          </label>
-          <label>
-            Add Video:
-            <input type="file" id="videoInput" accept="video/*">
-          </label>
-          <button type="submit">Post</button>
-        </div>
-      </form>
-    </section>
+    <!-- Create Post Section -->
+<section class="create-post">
+  <h2>Create a Post</h2>
+  <form id="postForm">
+    <!-- Title Input -->
+    <div class="form-group">
+      <label for="postTitle">Post Title:</label>
+      <input type="text" id="postTitle" name="postTitle" placeholder="Enter a title for your post" required>
+    </div>
+
+    <!-- Content Textarea -->
+    <div class="form-group">
+      <textarea name="postContent" id="postContent" rows="3" placeholder="What's on your mind?" required></textarea>
+    </div>
+
+    <div class="form-actions">
+      <label>
+        Add Image:
+        <input type="file" id="imageInput" accept="image/*">
+      </label>
+      <label>
+        Add Video:
+        <input type="file" id="videoInput" accept="video/*">
+      </label>
+      <button type="submit">Post</button>
+    </div>
+  </form>
+</section>
 
     <!-- Posts Section -->
     <section class="posts" id="posts">
@@ -83,7 +92,7 @@
   </footer>
 
   <!-- External JavaScript -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/homepage.js"></script>
 </body>
 
 </html>
