@@ -7,13 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     postForm.addEventListener('submit', (e) => {
       e.preventDefault();
   
-      // Gets post content
       const postContent = document.getElementById('postContent').value.trim();
       const imageInput = document.getElementById('imageInput').files[0];
       const videoInput = document.getElementById('videoInput').files[0];
   
-      // Prepares post object
       const post = {
+        id: Date.now(),
         content: postContent,
         image: imageInput ? URL.createObjectURL(imageInput) : null,
         video: videoInput ? URL.createObjectURL(videoInput) : null,
@@ -39,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPost(post) {
       const newPost = document.createElement('article');
       newPost.className = 'post';
+      newPost.dataset.id = post.id;
       newPost.innerHTML = `
         <p>${post.content}</p>
         ${post.image ? `<img src="${post.image}" alt="Post Image" style="max-width: 100%; margin-top: 10px;">` : ''}
@@ -50,9 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ${post.comments.map(comment => `<li>${comment}</li>`).join('')}
           </ul>
         </div>
+        <button class="delete-post">Delete Post</button>
       `;
       postsContainer.prepend(newPost);
       setupCommentFunctionality(newPost, post);
+      setupDeleteFunctionality(newPost, post.id);
     }
   
     function setupCommentFunctionality(postElement, post) {
@@ -68,14 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
           commentList.appendChild(newComment);
   
           const posts = JSON.parse(localStorage.getItem('posts')) || [];
-          const postIndex = posts.findIndex((p) => p.content === post.content);
+          const postIndex = posts.findIndex((p) => p.id === post.id);
           if (postIndex !== -1) {
             posts[postIndex].comments.push(commentText);
             localStorage.setItem('posts', JSON.stringify(posts));
           }
   
-          commentTextarea.value = ''; 
+          commentTextarea.value = '';
         }
+      });
+    }
+  
+    function setupDeleteFunctionality(postElement, postId) {
+      const deleteButton = postElement.querySelector('.delete-post');
+  
+      deleteButton.addEventListener('click', () => {
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        const updatedPosts = posts.filter((post) => post.id !== postId);
+        localStorage.setItem('posts', JSON.stringify(updatedPosts));
+        postElement.remove();
       });
     }
   });
