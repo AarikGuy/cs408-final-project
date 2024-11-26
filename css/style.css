@@ -257,3 +257,25 @@ footer {
   color: #555;
   border-top: 1px solid #ccc;
 }
+
+/* Profile Picture */
+
+.upload-label {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.upload-label:hover {
+  text-decoration: none;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+

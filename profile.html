@@ -29,7 +29,8 @@
   <main>
     <section class="profile">
       <div class="profile-header">
-        <img src="img/profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="img/profile-pic.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+        <input type="file" id="profilePicInput" accept="image/*">
         <h1>John Doe</h1>
         <p>Welcome to your profile! This is your personal space to manage posts, view activity, and update details.</p>
         <button>Edit Profile</button>
@@ -37,12 +38,7 @@
 
       <section class="posts">
         <h2>Your Posts</h2>
-        <article class="post">
-          <h3>Post Title</h3>
-          <p>This is a sample post on your profile page.</p>
-          <button>Delete</button>
-        </article>
-        <!-- Add more posts as needed -->
+        <div id="profile-posts"></div>
       </section>
     </section>
   </main>
@@ -53,7 +49,7 @@
   </footer>
 
   <!-- External JavaScript -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/profile.js"></script>
 </body>
 
 </html>
